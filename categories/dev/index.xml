@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Dev on ssatosays.com</title>
+    <link>https://ssatosays.github.io/blog/categories/dev/</link>
+    <description>Recent content in Dev on ssatosays.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 11 Feb 2022 00:00:00 +0900</lastBuildDate><atom:link href="https://ssatosays.github.io/blog/categories/dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HUGO/静的サイトジェネレーターによるサイト構築とGitHub Pagesでの公開手順 #2</title>
+      <link>https://ssatosays.github.io/blog/posts/2022/0211_2_hoge/</link>
+      <pubDate>Fri, 11 Feb 2022 00:00:00 +0900</pubDate>
+      
+      <guid>https://ssatosays.github.io/blog/posts/2022/0211_2_hoge/</guid>
+      <description> </description>
+    </item>
+    
+  </channel>
+</rss>
