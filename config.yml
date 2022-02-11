@@ -1,0 +1,45 @@
+baseURL: 'https://ssatosays.github.io/blog/'
+languageCode: 'en-us'
+title: 'ssatosays.com'
+paginate: 5
+theme: "PaperMod"
+
+enableInlineShortcodes: true
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+enableEmoji: true
+# googleAnalytics: UA-123-45
+
+minify:
+    disableXML: true
+
+menu:
+    main:
+        - name: Archive
+          url: archives/
+          weight: 5
+        - name: Tags
+          url: tags/
+          weight: 10
+        - name: Categories
+          url: categories/
+          weight: 15
+        - name: Search
+          url: search/
+          weight: 20
+
+params:
+    homeInfoParams:
+        Title: "ssatosays.com"
+        Content: >
+            Hi, I’m @ssatosays 👋 👋 👋
+
+    socialIcons:
+        - name: GitHub
+          url: "https://github.com/ssatosays"
+        - name: Twitter
+          url: https://twitter.com/ssatosays
+        - name: Email
+          url: mailto:ssatosays@gmail.com
