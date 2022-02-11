@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Posts on ssatosays.com</title>
+    <link>https://ssatosays.github.io/blog/posts/</link>
+    <description>Recent content in Posts on ssatosays.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 06 Feb 2022 00:00:00 +0900</lastBuildDate><atom:link href="https://ssatosays.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>テスト記事だよ！ #1</title>
+      <link>https://ssatosays.github.io/blog/posts/2022/0206_1_test_article/</link>
+      <pubDate>Sun, 06 Feb 2022 00:00:00 +0900</pubDate>
+      
+      <guid>https://ssatosays.github.io/blog/posts/2022/0206_1_test_article/</guid>
+      <description>テスト記事だよ！</description>
+    </item>
+    
+  </channel>
+</rss>
