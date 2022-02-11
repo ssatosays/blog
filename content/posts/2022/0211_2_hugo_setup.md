@@ -5,7 +5,7 @@ description: " "
 summary: " "
 tags: ["Hugo", "PaperMod", "SSG", "GitHub", "GitHub Pages"]
 categories: ["Dev"]
-draft: true
+draft: false
 ---
 
 ## Hugoとは
@@ -21,3 +21,7 @@ draft: true
 
 ## Hugo Themes
 - [Hugo Themes](https://themes.gohugo.io/)
+
+## GitHub Pages
+- [始めましょう！ | GitHub Docs](https://docs.github.com/ja/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
+- [カスタムドメインの設定 | GitHub Docs](https://docs.github.com/ja/pages/configuring-a-custom-domain-for-your-github-pages-site/about-custom-domains-and-github-pages)
