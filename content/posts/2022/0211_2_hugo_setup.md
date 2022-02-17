@@ -1,5 +1,5 @@
 ---
-title: "HUGO/静的サイトジェネレーターによるサイト構築とGitHub Pagesでの公開手順 #2"
+title: "HUGO(静的サイトジェネレーター)によるサイト構築とGitHub Pagesでの公開手順 #2"
 date: 2022-02-11T00:00:00+09:00
 description: " "
 summary: " "
