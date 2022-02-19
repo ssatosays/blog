@@ -1,6 +1,6 @@
 baseURL: 'https://ssatosays.github.io/blog/'
 languageCode: 'en-us'
-title: 'ssatosays.com'
+title: 'ssatosays.jp'
 paginate: 5
 theme: "PaperMod"
 
@@ -32,7 +32,7 @@ menu:
 
 params:
     homeInfoParams:
-        Title: "ssatosays.com"
+        Title: "ssatosays.jp"
         Content: >
             Hi, I’m @ssatosays 👋 👋 👋
 
