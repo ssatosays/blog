@@ -1,0 +1,22 @@
+baseURL = "/"
+title = "Sota's Blog"
+languageCode = "en-us"
+paginate = "20"
+theme = "mainroad"
+
+[Author]
+  name = "Sota Sato"
+  bio = "Hello, world."
+  avatar = ""
+
+[Params]
+  description = "About everything"
+  opengraph = true
+  twitter_cards = true
+  readmore = false
+  authorbox = true
+  pager = true
+  post_meta = ["date", "categories"]
+
+[Params.logo]
+  subtitle = "About everything"
