@@ -1,3 +1,3 @@
 #!/bin/bash
 
-hugo && mv ./public ./docs
+rm -rf ./public ./docs && hugo --minify && mv ./public ./docs
