@@ -10,13 +10,30 @@ theme = "mainroad"
   avatar = "https://avatars.githubusercontent.com/u/86867075"
 
 [Params]
+  subtitle = "Develop | Other themes"
   description = "Develop | Other themes"
+  copyright = "ssatosays/blog"
   opengraph = true
   twitter_cards = true
   readmore = false
   authorbox = true
   pager = true
   post_meta = ["date", "categories"]
+  mainSections = ["posts"]
+  highlightColor = "#005851"
+  customCSS = ["css/custom.css"]
+  customJS = ["js/custom.js"]
 
-[Params.logo]
-  subtitle = "Develop | Other themes"
+[Params.sidebar]
+  home = "right"
+  list = "right"
+  single = false
+  widgets = ["recent", "categories", "taglist", "social"]
+
+[Params.widgets]
+  recent_num = "5"
+  categories_counter = true
+  tags_counter = true
+
+[Params.widgets.social]
+  email = "ssatosays@gmail.com"
