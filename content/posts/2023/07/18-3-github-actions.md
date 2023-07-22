@@ -3,6 +3,8 @@ title: "GitHub Actions: サンプルコード #3"
 date: "2023-07-18T20:00:00+09:00"
 categories:
   - "Dev"
+tags:
+  - "GitHub Actions"
 draft: "false"
 ---
 

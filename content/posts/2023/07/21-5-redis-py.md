@@ -3,6 +3,8 @@ title: "redis-py: Basic Example #5"
 date: "2023-07-21T21:00:00+09:00"
 categories:
   - "Dev"
+tags:
+  - "Python"
 draft: "false"
 ---
 
