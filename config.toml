@@ -1,5 +1,5 @@
 baseURL = "/"
-title = "Sota's Blog"
+title = "ssatosays/blog"
 languageCode = "en-us"
 paginate = "20"
 theme = "mainroad"
@@ -7,7 +7,7 @@ theme = "mainroad"
 [Author]
   name = "Sota Sato"
   bio = "Hello, world."
-  avatar = ""
+  avatar = "https://avatars.githubusercontent.com/u/86867075"
 
 [Params]
   description = "About everything"
