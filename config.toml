@@ -9,6 +9,10 @@ theme = "mainroad"
   name = "HOME"
   pageRef = "/"
   weight = "10"
+[[menu.main]]
+  name = "ABOUT"
+  pageRef = "/about"
+  weight = "20"
 
 [Author]
   name = "Sota Sato"
