@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "https://ssatosays.github.io/blog"
 title = "ssatosays/blog"
 languageCode = "en-us"
 paginate = "20"
