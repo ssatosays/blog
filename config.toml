@@ -4,6 +4,12 @@ languageCode = "en-us"
 paginate = "20"
 theme = "mainroad"
 
+[menu]
+[[menu.main]]
+  name = "HOME"
+  pageRef = "/"
+  weight = "10"
+
 [Author]
   name = "Sota Sato"
   bio = "Software Developer"
