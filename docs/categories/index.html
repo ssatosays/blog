@@ -7,17 +7,18 @@
 <script>(function(a,b){a[b]=a[b].replace("no-js","js")})(document.documentElement,"className")</script>
 <meta name=description content>
 <meta property="og:title" content="Categories">
-<meta property="og:description" content="About everything">
+<meta property="og:description" content="Develop | Other themes">
 <meta property="og:type" content="website">
 <meta property="og:url" content="/categories/">
 <meta name=twitter:card content="summary">
 <meta name=twitter:title content="Categories">
-<meta name=twitter:description content="About everything">
+<meta name=twitter:description content="Develop | Other themes">
 <link rel=preconnect href=https://fonts.gstatic.com crossorigin>
 <link rel=dns-prefetch href=//fonts.googleapis.com>
 <link rel=dns-prefetch href=//fonts.gstatic.com>
 <link rel=stylesheet href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 <link rel=stylesheet href=/css/style.css>
+<link rel=stylesheet href=/css/custom.css>
 <link rel=alternate type=application/rss+xml href=/categories/index.xml title=ssatosays/blog>
 <link rel="shortcut icon" href=/favicon.ico>
 </head>
@@ -29,11 +30,22 @@
 <a class=logo__link href=/ title=ssatosays/blog rel=home>
 <div class=logo__item>
 <div class=logo__title>ssatosays/blog</div>
-<div class=logo__tagline>About everything</div>
+<div class=logo__tagline>Develop | Other themes</div>
 </div>
 </a>
 </div>
-<div class=divider></div>
+<nav class=menu>
+<button class=menu__btn aria-haspopup=true aria-expanded=false tabindex=0>
+<span class=menu__btn-title tabindex=-1>Menu</span>
+</button>
+<ul class=menu__list>
+<li class=menu__item>
+<a class=menu__link href=/>
+<span class=menu__text>HOME</span>
+</a>
+</li>
+</ul>
+</nav>
 </div>
 </header>
 <div class="wrapper flex">
@@ -66,6 +78,52 @@ General
 </article>
 </main>
 </div>
+<aside class=sidebar>
+<div class="widget-recent widget">
+<h4 class=widget__title>Recent Posts</h4>
+<div class=widget__content>
+<ul class=widget__list>
+<li class=widget__item><a class=widget__link href=/posts/2023/07/21-5-redis-py/>redis-py: Basic Example #5</a></li>
+<li class=widget__item><a class=widget__link href=/posts/2023/07/21-4-openpyxl/>OpenPyXL: サンプルコード #4</a></li>
+<li class=widget__item><a class=widget__link href=/posts/2023/07/18-3-github-actions/>GitHub Actions: サンプルコード #3</a></li>
+<li class=widget__item><a class=widget__link href=/posts/2023/07/17-2-timetable/>時速と所要時間の対応表 #2</a></li>
+<li class=widget__item><a class=widget__link href=/posts/2023/07/17-1-cashflow/>キャッシュフローが良いとはどのような状態ですか？ #1</a></li>
+</ul>
+</div>
+</div>
+<div class="widget-categories widget">
+<h4 class=widget__title>Categories</h4>
+<div class=widget__content>
+<ul class=widget__list>
+<li class=widget__item>
+<a class=widget__link href=/categories/dev/>Dev</a>&nbsp;
+<span class="widget__counter widget__counter--bubble">3</span>
+</li>
+<li class=widget__item>
+<a class=widget__link href=/categories/general/>General</a>&nbsp;
+<span class="widget__counter widget__counter--bubble">2</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="widget-taglist widget">
+<h4 class=widget__title>Tags</h4>
+<div class=widget__content>
+<a class="widget-taglist__link widget__link btn" href=/tags/github-actions/ title="GitHub Actions">GitHub Actions (1)</a>
+<a class="widget-taglist__link widget__link btn" href=/tags/python/ title=Python>Python (2)</a>
+</div>
+</div>
+<div class="widget-social widget">
+<h4 class="widget-social__title widget__title">Social</h4>
+<div class="widget-social__content widget__content">
+<div class="widget-social__item widget__item">
+<a class="widget-social__link widget__link btn" title=Email href=mailto:ssatosays@gmail.com><svg class="widget-social__link-icon icon icon-mail" width="24" height="24" viewBox="0 0 416 288"><path d="m0 16v256 16h16 384 16v-16V16 0h-16H16 0zm347 16-139 92.5L69 32zM199 157.5l9 5.5 9-5.5L384 46v210H32V46z"/></svg>
+<span>ssatosays@gmail.com</span>
+</a>
+</div>
+</div>
+</div>
+</aside>
 </div>
 <footer class=footer>
 <div class="container footer__container flex">
@@ -77,5 +135,5 @@ General
 </footer>
 </div>
 <script async defer src=/js/menu.js></script>
-</body>
+<script src=/js/custom.js></script></body>
 </html>

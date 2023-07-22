@@ -22,6 +22,7 @@
 <link rel=dns-prefetch href=//fonts.gstatic.com>
 <link rel=stylesheet href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 <link rel=stylesheet href=/css/style.css>
+<link rel=stylesheet href=/css/custom.css>
 <link rel="shortcut icon" href=/favicon.ico>
 </head>
 <body class=body>
@@ -32,11 +33,22 @@
 <a class=logo__link href=/ title=ssatosays/blog rel=home>
 <div class=logo__item>
 <div class=logo__title>ssatosays/blog</div>
-<div class=logo__tagline>About everything</div>
+<div class=logo__tagline>Develop | Other themes</div>
 </div>
 </a>
 </div>
-<div class=divider></div>
+<nav class=menu>
+<button class=menu__btn aria-haspopup=true aria-expanded=false tabindex=0>
+<span class=menu__btn-title tabindex=-1>Menu</span>
+</button>
+<ul class=menu__list>
+<li class=menu__item>
+<a class=menu__link href=/>
+<span class=menu__text>HOME</span>
+</a>
+</li>
+</ul>
+</nav>
 </div>
 </header>
 <div class="wrapper flex">
@@ -70,7 +82,7 @@
 <span class=authorbox__name>About Sota Sato</span>
 </div>
 <div class=authorbox__description>
-Hello, world.
+Software Developer
 </div>
 </div>
 <nav class="pager flex">
@@ -93,5 +105,5 @@ Hello, world.
 </footer>
 </div>
 <script async defer src=/js/menu.js></script>
-</body>
+<script src=/js/custom.js></script></body>
 </html>

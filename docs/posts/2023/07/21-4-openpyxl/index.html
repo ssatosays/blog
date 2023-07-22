@@ -20,6 +20,7 @@
 <link rel=dns-prefetch href=//fonts.gstatic.com>
 <link rel=stylesheet href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 <link rel=stylesheet href=/css/style.css>
+<link rel=stylesheet href=/css/custom.css>
 <link rel="shortcut icon" href=/favicon.ico>
 </head>
 <body class=body>
@@ -30,11 +31,22 @@
 <a class=logo__link href=/ title=ssatosays/blog rel=home>
 <div class=logo__item>
 <div class=logo__title>ssatosays/blog</div>
-<div class=logo__tagline>About everything</div>
+<div class=logo__tagline>Develop | Other themes</div>
 </div>
 </a>
 </div>
-<div class=divider></div>
+<nav class=menu>
+<button class=menu__btn aria-haspopup=true aria-expanded=false tabindex=0>
+<span class=menu__btn-title tabindex=-1>Menu</span>
+</button>
+<ul class=menu__list>
+<li class=menu__item>
+<a class=menu__link href=/>
+<span class=menu__text>HOME</span>
+</a>
+</li>
+</ul>
+</nav>
 </div>
 </header>
 <div class="wrapper flex">
@@ -64,6 +76,15 @@ worksheet[<span style=color:#e6db74>&#39;C1&#39;</span>] <span style=color:#f926
 workbook<span style=color:#f92672>.</span>save(filename)
 </code></pre></div>
 </div>
+<footer class=post__footer>
+<div class="post__tags tags clearfix"><svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5.0 11V3C0 1.5.8.8.8.8S1.5.0 3 0h8c1.5.0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 100-6 3 3 0 000 6z"/></svg>
+<ul class=tags__list>
+<li class=tags__item>
+<a class="tags__link btn" href=/tags/python/ rel=tag>Python</a>
+</li>
+</ul>
+</div>
+</footer>
 </article>
 </main>
 <div class="authorbox clearfix">
@@ -74,7 +95,7 @@ workbook<span style=color:#f92672>.</span>save(filename)
 <span class=authorbox__name>About Sota Sato</span>
 </div>
 <div class=authorbox__description>
-Hello, world.
+Software Developer
 </div>
 </div>
 <nav class="pager flex">
@@ -103,5 +124,5 @@ Hello, world.
 </footer>
 </div>
 <script async defer src=/js/menu.js></script>
-</body>
+<script src=/js/custom.js></script></body>
 </html>
