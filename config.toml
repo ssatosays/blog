@@ -3,6 +3,7 @@ title = "ssatosays/blog"
 languageCode = "en-us"
 paginate = "20"
 theme = "mainroad"
+googleAnalytics = "G-1Z8YRRRKXW"
 
 [menu]
 [[menu.main]]
