@@ -6,11 +6,11 @@ theme = "mainroad"
 
 [Author]
   name = "Sota Sato"
-  bio = "Hello, world."
+  bio = "Software Developer"
   avatar = "https://avatars.githubusercontent.com/u/86867075"
 
 [Params]
-  description = "About everything"
+  description = "Develop | Other themes"
   opengraph = true
   twitter_cards = true
   readmore = false
@@ -19,4 +19,4 @@ theme = "mainroad"
   post_meta = ["date", "categories"]
 
 [Params.logo]
-  subtitle = "About everything"
+  subtitle = "Develop | Other themes"
