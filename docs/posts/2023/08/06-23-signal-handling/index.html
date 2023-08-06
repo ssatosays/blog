@@ -1,0 +1,160 @@
+<!doctype html><html class=no-js lang=en>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<title>Signal Handling in Bash #23 - ssatosays/blog</title>
+<script>(function(a,b){a[b]=a[b].replace("no-js","js")})(document.documentElement,"className")</script>
+<meta name=description content>
+<meta property="og:title" content="Signal Handling in Bash #23">
+<meta property="og:description" content="使用可能なシグナルの一覧 $ kill -l 1) SIGHUP 2) SIGINT 3) SIGQUIT 4) SIGILL 5) SIGTRAP 6) SIGABRT 7) SIGBUS 8) SIGFPE 9) SIGKILL 10) SIGUSR1 11) SIGSEGV 12) SIGUSR2 13) SIGPIPE 14) SIGALRM 15) SIGTERM 16) SIGSTKFLT 17) SIGCHLD 18) SIGCONT 19) SIGSTOP 20) SIGTSTP 21) SIGTTIN 22) SIGTTOU 23) SIGURG 24) SIGXCPU 25) SIGXFSZ 26) SIGVTALRM 27) SIGPROF 28) SIGWINCH 29) SIGIO 30) SIGPWR 31) SIGSYS 34) SIGRTMIN 35) SIGRTMIN+1 36) SIGRTMIN+2 37) SIGRTMIN+3 38) SIGRTMIN+4 39) SIGRTMIN+5 40) SIGRTMIN+6 41) SIGRTMIN+7 42) SIGRTMIN+8 43) SIGRTMIN+9 44) SIGRTMIN+10 45) SIGRTMIN+11 46) SIGRTMIN+12 47) SIGRTMIN+13 48) SIGRTMIN+14 49) SIGRTMIN+15 50) SIGRTMAX-14 51) SIGRTMAX-13 52) SIGRTMAX-12 53) SIGRTMAX-11 54) SIGRTMAX-10 55) SIGRTMAX-9 56) SIGRTMAX-8 57) SIGRTMAX-7 58) SIGRTMAX-6 59) SIGRTMAX-5 60) SIGRTMAX-4 61) SIGRTMAX-3 62) SIGRTMAX-2 63) SIGRTMAX-1 64) SIGRTMAX 各キーでのシグナル $ stty -a speed 38400 baud; rows 30; columns 140; line = 0; intr = ^C; quit = ^\; erase = ^?">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ssatosays.github.io/blog/posts/2023/08/06-23-signal-handling/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2023-08-06T16:30:00+09:00">
+<meta property="article:modified_time" content="2023-08-06T16:30:00+09:00">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="Signal Handling in Bash #23">
+<meta name=twitter:description content="使用可能なシグナルの一覧 $ kill -l 1) SIGHUP 2) SIGINT 3) SIGQUIT 4) SIGILL 5) SIGTRAP 6) SIGABRT 7) SIGBUS 8) SIGFPE 9) SIGKILL 10) SIGUSR1 11) SIGSEGV 12) SIGUSR2 13) SIGPIPE 14) SIGALRM 15) SIGTERM 16) SIGSTKFLT 17) SIGCHLD 18) SIGCONT 19) SIGSTOP 20) SIGTSTP 21) SIGTTIN 22) SIGTTOU 23) SIGURG 24) SIGXCPU 25) SIGXFSZ 26) SIGVTALRM 27) SIGPROF 28) SIGWINCH 29) SIGIO 30) SIGPWR 31) SIGSYS 34) SIGRTMIN 35) SIGRTMIN+1 36) SIGRTMIN+2 37) SIGRTMIN+3 38) SIGRTMIN+4 39) SIGRTMIN+5 40) SIGRTMIN+6 41) SIGRTMIN+7 42) SIGRTMIN+8 43) SIGRTMIN+9 44) SIGRTMIN+10 45) SIGRTMIN+11 46) SIGRTMIN+12 47) SIGRTMIN+13 48) SIGRTMIN+14 49) SIGRTMIN+15 50) SIGRTMAX-14 51) SIGRTMAX-13 52) SIGRTMAX-12 53) SIGRTMAX-11 54) SIGRTMAX-10 55) SIGRTMAX-9 56) SIGRTMAX-8 57) SIGRTMAX-7 58) SIGRTMAX-6 59) SIGRTMAX-5 60) SIGRTMAX-4 61) SIGRTMAX-3 62) SIGRTMAX-2 63) SIGRTMAX-1 64) SIGRTMAX 各キーでのシグナル $ stty -a speed 38400 baud; rows 30; columns 140; line = 0; intr = ^C; quit = ^\; erase = ^?">
+<link rel=preconnect href=https://fonts.gstatic.com crossorigin>
+<link rel=dns-prefetch href=//fonts.googleapis.com>
+<link rel=dns-prefetch href=//fonts.gstatic.com>
+<link rel=stylesheet href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+<link rel=stylesheet href=/blog/css/style.css>
+<link rel=stylesheet href=/blog/css/custom.css>
+<link rel="shortcut icon" href=/blog/favicon.ico>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1Z8YRRRKXW"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-1Z8YRRRKXW',{anonymize_ip:!1})}</script>
+</head>
+<body class=body>
+<div class="container container--outer">
+<header class=header>
+<div class="container header__container">
+<div class=logo>
+<a class=logo__link href=/blog title=ssatosays/blog rel=home>
+<div class=logo__item>
+<div class=logo__title>ssatosays/blog</div>
+<div class=logo__tagline>Develop | Other themes</div>
+</div>
+</a>
+</div>
+<nav class=menu>
+<button class=menu__btn aria-haspopup=true aria-expanded=false tabindex=0>
+<span class=menu__btn-title tabindex=-1>Menu</span>
+</button>
+<ul class=menu__list>
+<li class=menu__item>
+<a class=menu__link href=/blog/>
+<span class=menu__text>HOME</span>
+</a>
+</li>
+<li class=menu__item>
+<a class=menu__link href=/blog/about/>
+<span class=menu__text>ABOUT</span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+<div class="wrapper flex">
+<div class=primary>
+<main class=main role=main>
+<article class=post>
+<header class=post__header>
+<h1 class=post__title>Signal Handling in Bash #23</h1>
+<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2023-08-06T16:30:00+09:00>August 06, 2023</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/blog/categories/dev/ rel=category>Dev</a>
+</span>
+</div></div>
+</header>
+<div class="content post__content clearfix">
+<h3 id=使用可能なシグナルの一覧>使用可能なシグナルの一覧</h3>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ kill -l
+ 1<span style=color:#f92672>)</span> SIGHUP       2<span style=color:#f92672>)</span> SIGINT       3<span style=color:#f92672>)</span> SIGQUIT      4<span style=color:#f92672>)</span> SIGILL       5<span style=color:#f92672>)</span> SIGTRAP
+ 6<span style=color:#f92672>)</span> SIGABRT      7<span style=color:#f92672>)</span> SIGBUS       8<span style=color:#f92672>)</span> SIGFPE       9<span style=color:#f92672>)</span> SIGKILL     10<span style=color:#f92672>)</span> SIGUSR1
+11<span style=color:#f92672>)</span> SIGSEGV     12<span style=color:#f92672>)</span> SIGUSR2     13<span style=color:#f92672>)</span> SIGPIPE     14<span style=color:#f92672>)</span> SIGALRM     15<span style=color:#f92672>)</span> SIGTERM
+16<span style=color:#f92672>)</span> SIGSTKFLT   17<span style=color:#f92672>)</span> SIGCHLD     18<span style=color:#f92672>)</span> SIGCONT     19<span style=color:#f92672>)</span> SIGSTOP     20<span style=color:#f92672>)</span> SIGTSTP
+21<span style=color:#f92672>)</span> SIGTTIN     22<span style=color:#f92672>)</span> SIGTTOU     23<span style=color:#f92672>)</span> SIGURG      24<span style=color:#f92672>)</span> SIGXCPU     25<span style=color:#f92672>)</span> SIGXFSZ
+26<span style=color:#f92672>)</span> SIGVTALRM   27<span style=color:#f92672>)</span> SIGPROF     28<span style=color:#f92672>)</span> SIGWINCH    29<span style=color:#f92672>)</span> SIGIO       30<span style=color:#f92672>)</span> SIGPWR
+31<span style=color:#f92672>)</span> SIGSYS      34<span style=color:#f92672>)</span> SIGRTMIN    35<span style=color:#f92672>)</span> SIGRTMIN+1  36<span style=color:#f92672>)</span> SIGRTMIN+2  37<span style=color:#f92672>)</span> SIGRTMIN+3
+38<span style=color:#f92672>)</span> SIGRTMIN+4  39<span style=color:#f92672>)</span> SIGRTMIN+5  40<span style=color:#f92672>)</span> SIGRTMIN+6  41<span style=color:#f92672>)</span> SIGRTMIN+7  42<span style=color:#f92672>)</span> SIGRTMIN+8
+43<span style=color:#f92672>)</span> SIGRTMIN+9  44<span style=color:#f92672>)</span> SIGRTMIN+10 45<span style=color:#f92672>)</span> SIGRTMIN+11 46<span style=color:#f92672>)</span> SIGRTMIN+12 47<span style=color:#f92672>)</span> SIGRTMIN+13
+48<span style=color:#f92672>)</span> SIGRTMIN+14 49<span style=color:#f92672>)</span> SIGRTMIN+15 50<span style=color:#f92672>)</span> SIGRTMAX-14 51<span style=color:#f92672>)</span> SIGRTMAX-13 52<span style=color:#f92672>)</span> SIGRTMAX-12
+53<span style=color:#f92672>)</span> SIGRTMAX-11 54<span style=color:#f92672>)</span> SIGRTMAX-10 55<span style=color:#f92672>)</span> SIGRTMAX-9  56<span style=color:#f92672>)</span> SIGRTMAX-8  57<span style=color:#f92672>)</span> SIGRTMAX-7
+58<span style=color:#f92672>)</span> SIGRTMAX-6  59<span style=color:#f92672>)</span> SIGRTMAX-5  60<span style=color:#f92672>)</span> SIGRTMAX-4  61<span style=color:#f92672>)</span> SIGRTMAX-3  62<span style=color:#f92672>)</span> SIGRTMAX-2
+63<span style=color:#f92672>)</span> SIGRTMAX-1  64<span style=color:#f92672>)</span> SIGRTMAX
+</code></pre></div><h3 id=各キーでのシグナル>各キーでのシグナル</h3>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ stty -a
+speed <span style=color:#ae81ff>38400</span> baud; rows 30; columns 140; line <span style=color:#f92672>=</span> 0;
+intr <span style=color:#f92672>=</span> ^C; quit <span style=color:#f92672>=</span> ^<span style=color:#ae81ff>\;</span> erase <span style=color:#f92672>=</span> ^?; kill <span style=color:#f92672>=</span> ^U; eof <span style=color:#f92672>=</span> ^D; eol <span style=color:#f92672>=</span> &lt;undef&gt;; eol2 <span style=color:#f92672>=</span> &lt;undef&gt;; swtch <span style=color:#f92672>=</span> &lt;undef&gt;; start <span style=color:#f92672>=</span> ^Q; stop <span style=color:#f92672>=</span> ^S; susp <span style=color:#f92672>=</span> ^Z;
+rprnt <span style=color:#f92672>=</span> ^R; werase <span style=color:#f92672>=</span> ^W; lnext <span style=color:#f92672>=</span> ^V; discard <span style=color:#f92672>=</span> ^O; min <span style=color:#f92672>=</span> 1; time <span style=color:#f92672>=</span> 0;
+-parenb -parodd -cmspar cs8 -hupcl -cstopb cread -clocal -crtscts
+-ignbrk -brkint -ignpar -parmrk -inpck -istrip -inlcr -igncr icrnl ixon -ixoff -iuclc -ixany -imaxbel -iutf8
+opost -olcuc -ocrnl onlcr -onocr -onlret -ofill -ofdel nl0 cr0 tab0 bs0 vt0 ff0
+isig icanon iexten echo echoe echok -echonl -noflsh -xcase -tostop -echoprt echoctl echoke -flusho -extproc
+</code></pre></div><h2 id=サンプルコード>サンプルコード</h2>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#75715e>#!/bin/bash
+</span><span style=color:#75715e></span>
+<span style=color:#66d9ef>function</span> handle_sigint<span style=color:#f92672>()</span> <span style=color:#f92672>{</span>
+    echo <span style=color:#e6db74>&#34;Received SIGINT&#34;</span>
+<span style=color:#f92672>}</span>
+
+<span style=color:#66d9ef>function</span> handle_sigterm<span style=color:#f92672>()</span> <span style=color:#f92672>{</span>
+    echo <span style=color:#e6db74>&#34;Received SIGTERM&#34;</span>
+    exit <span style=color:#ae81ff>0</span>
+<span style=color:#f92672>}</span>
+
+trap handle_sigint SIGINT
+trap handle_sigterm SIGTERM
+
+<span style=color:#66d9ef>while</span> true; <span style=color:#66d9ef>do</span>
+    echo <span style=color:#e6db74>&#39;sleeping...&#39;</span>
+    sleep <span style=color:#ae81ff>1</span>
+<span style=color:#66d9ef>done</span>
+</code></pre></div>
+</div>
+<footer class=post__footer>
+<div class="post__tags tags clearfix"><svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5.0 11V3C0 1.5.8.8.8.8S1.5.0 3 0h8c1.5.0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 100-6 3 3 0 000 6z"/></svg>
+<ul class=tags__list>
+<li class=tags__item>
+<a class="tags__link btn" href=/blog/tags/bash/ rel=tag>Bash</a>
+</li>
+</ul>
+</div>
+</footer>
+</article>
+</main>
+<div class="authorbox clearfix">
+<figure class=authorbox__avatar>
+<img alt="Sota Sato avatar" src=https://avatars.githubusercontent.com/u/86867075 class=avatar height=90 width=90>
+</figure>
+<div class=authorbox__header>
+<span class=authorbox__name>About Sota Sato</span>
+</div>
+<div class=authorbox__description>
+Software Engineer
+</div>
+</div>
+<nav class="pager flex">
+<div class="pager__item pager__item--prev">
+<a class=pager__link href=/blog/posts/2023/08/06-22-email/ rel=prev>
+<span class=pager__subtitle>«&#8201;Previous</span>
+<p class=pager__title>PythonでSMTPメールを送信する #22</p>
+</a>
+</div>
+</nav>
+</div>
+</div>
+<footer class=footer>
+<div class="container footer__container flex">
+<div class=footer__copyright>
+&copy; 2023 ssatosays/blog.
+<span class=footer__copyright-credits>Generated with <a href=https://gohugo.io/ rel="nofollow noopener" target=_blank>Hugo</a> and <a href=https://github.com/Vimux/Mainroad/ rel="nofollow noopener" target=_blank>Mainroad</a> theme.</span>
+</div>
+</div>
+</footer>
+</div>
+<script async defer src=/blog/js/menu.js></script>
+<script src=/blog/js/custom.js></script></body>
+</html>
