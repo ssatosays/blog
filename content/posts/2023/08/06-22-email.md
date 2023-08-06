@@ -1,6 +1,6 @@
 ---
 title: "PythonでSMTPメールを送信する #22"
-date: "2023-08-06T15:30:00+09:00"
+date: "2023-08-06T16:00:00+09:00"
 categories:
   - "Dev"
 tags:
