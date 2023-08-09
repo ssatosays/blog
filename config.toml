@@ -21,8 +21,8 @@ googleAnalytics = "G-1Z8YRRRKXW"
   avatar = "https://avatars.githubusercontent.com/u/86867075"
 
 [Params]
-  subtitle = "Develop | Other themes"
-  description = "Develop | Other themes"
+  subtitle = "Develop & Others"
+  description = "Develop & Others"
   copyright = "ssatosays/blog"
   opengraph = true
   twitter_cards = true
