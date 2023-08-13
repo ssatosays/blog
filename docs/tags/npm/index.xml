@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>npm on ssatosays/blog</title><link>https://ssatosays.github.io/blog/tags/npm/</link><description>Recent content in npm on ssatosays/blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 07 Aug 2023 12:30:00 +0900</lastBuildDate><atom:link href="https://ssatosays.github.io/blog/tags/npm/index.xml" rel="self" type="application/rss+xml"/><item><title>npmコマンドチートシート #25</title><link>https://ssatosays.github.io/blog/posts/2023/08/07-25-npm/</link><pubDate>Mon, 07 Aug 2023 12:30:00 +0900</pubDate><guid>https://ssatosays.github.io/blog/posts/2023/08/07-25-npm/</guid><description>初期化 &amp;amp; パッケージ作成
+npm init npm init -y インストール
+npm install &amp;lt;package-name&amp;gt; npm install &amp;lt;package-name&amp;gt; --save-dev npm install -g &amp;lt;package-name&amp;gt; npm install npm i アンインストール
+npm uninstall &amp;lt;package-name&amp;gt; list
+npm list npm list -g --depth=0 npm info &amp;lt;package-name&amp;gt; スクリプト実行
+npm run &amp;lt;script-name&amp;gt; アップデート
+npm outdated npm update npm update -g &amp;lt;package-name&amp;gt; その他
+npm search &amp;lt;keyword&amp;gt; npm cache clean --force npm config list npm login npm publish</description></item></channel></rss>
