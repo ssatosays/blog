@@ -9,7 +9,7 @@
 <meta property="og:title" content="curlコマンドチートシート #27">
 <meta property="og:description" content="GET
 curl http://localhost:3000/entry POST
-curl -X POST -H &#34;Content-Type: application/json&#34; -d '{&#34;Name&#34;:&#34;name&#34;, &#34;Age&#34;:&#34;100&#34;}' http://localhost:3000/entry PUTなどのその他のHTTPメソッド
+curl -X POST -H &#34;Content-Type: application/json&#34; -d '{&#34;Name&#34;:&#34;name&#34;, &#34;Age&#34;:&#34;100&#34;}' http://localhost:3000/entry # 改行あり curl -X POST \ -H &#34;Content-Type: application/json&#34; \ -d '{&#34;Name&#34;:&#34;name&#34;, &#34;Age&#34;:&#34;100&#34;}' \ http://localhost:3000/entry PUTなどのその他のHTTPメソッド
 curl -X PUT -H &#34;Content-Type: application/json&#34; -d '{&#34;Name&#34;:&#34;name&#34;, &#34;Age&#34;:&#34;100&#34;}' http://localhost:3000/entry ヘッダーの追加
 curl -H &#34;Authorization: Bearer YOUR_TOKEN&#34; http://localhost:3000/secure-entry レスポンスヘッダーの表示
 curl -i http://localhost:3000/entry ">
@@ -21,7 +21,7 @@ curl -i http://localhost:3000/entry ">
 <meta name=twitter:title content="curlコマンドチートシート #27">
 <meta name=twitter:description content="GET
 curl http://localhost:3000/entry POST
-curl -X POST -H &#34;Content-Type: application/json&#34; -d '{&#34;Name&#34;:&#34;name&#34;, &#34;Age&#34;:&#34;100&#34;}' http://localhost:3000/entry PUTなどのその他のHTTPメソッド
+curl -X POST -H &#34;Content-Type: application/json&#34; -d '{&#34;Name&#34;:&#34;name&#34;, &#34;Age&#34;:&#34;100&#34;}' http://localhost:3000/entry # 改行あり curl -X POST \ -H &#34;Content-Type: application/json&#34; \ -d '{&#34;Name&#34;:&#34;name&#34;, &#34;Age&#34;:&#34;100&#34;}' \ http://localhost:3000/entry PUTなどのその他のHTTPメソッド
 curl -X PUT -H &#34;Content-Type: application/json&#34; -d '{&#34;Name&#34;:&#34;name&#34;, &#34;Age&#34;:&#34;100&#34;}' http://localhost:3000/entry ヘッダーの追加
 curl -H &#34;Authorization: Bearer YOUR_TOKEN&#34; http://localhost:3000/secure-entry レスポンスヘッダーの表示
 curl -i http://localhost:3000/entry ">
@@ -83,6 +83,12 @@ curl -i http://localhost:3000/entry ">
 <pre><code>curl http://localhost:3000/entry
 </code></pre><p>POST</p>
 <pre><code>curl -X POST -H &quot;Content-Type: application/json&quot; -d '{&quot;Name&quot;:&quot;name&quot;, &quot;Age&quot;:&quot;100&quot;}' http://localhost:3000/entry
+
+# 改行あり
+curl -X POST \
+  -H &quot;Content-Type: application/json&quot; \
+  -d '{&quot;Name&quot;:&quot;name&quot;, &quot;Age&quot;:&quot;100&quot;}' \
+  http://localhost:3000/entry
 </code></pre><p>PUTなどのその他のHTTPメソッド</p>
 <pre><code>curl -X PUT -H &quot;Content-Type: application/json&quot; -d '{&quot;Name&quot;:&quot;name&quot;, &quot;Age&quot;:&quot;100&quot;}' http://localhost:3000/entry
 </code></pre><p>ヘッダーの追加</p>
